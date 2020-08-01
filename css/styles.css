@@ -1,0 +1,529 @@
+/* CSS variable */
+:root{
+    --primary-color: #e50914;
+}
+/* Basic default styling */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #000;
+    color: #999;
+}
+ul{
+    list-style: none;
+}
+h1,h2,h3,h4{
+    color: #fff;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+p{
+    margin: 0.5rem 0;
+}
+img{
+    width: 100%;
+}
+.showcase{
+    width: 100%;
+    height: 75vh;
+    position: relative;
+    background: url(/img/bg.jpg) center center/cover;
+    border-bottom: 8px solid #222222;
+}
+.showcase::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 80px 250px #000000, inset 0 -80px 250px #000000;
+}
+.showcase-top{
+    position: relative;
+    height: 90px;
+    z-index: 2;
+}
+.showcase-top img{
+    width: 170px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.showcase-top a{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%,-50%);
+}
+.showcase-content{
+    position: relative;
+    margin: auto;
+    text-align: center;
+    margin-top: 8rem;
+    z-index: 2;
+}
+.heading-container{
+    margin: auto;
+    max-width: 60%;
+    text-align: center;
+}
+.showcase-content h1{
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.1em;
+    margin: 0 0 2rem; 
+}
+.showcase-contact{
+    position: relative;
+}
+.showcase-content p{
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.25;
+    margin: 0 0 2rem;
+}
+
+/* Button and input styles */
+/* ----------------------------------------------------------------------------------------------- */
+.btn{
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.4rem 1.3rem;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    outline: none;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+    border-radius: 2px;
+}
+.btn:hover{
+    opacity: 0.9;
+}
+.btn-rounded{
+    border-radius: 5px;
+}
+.btn-xl{
+    padding: 1.0rem 2.0rem ;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+.btn-lg{
+    font-size: 1rem;
+    padding: 1.0rem 1.3rem;
+    text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------------------------- */
+/* START :SMART INPUT FIELD UTILITY */
+.register{
+    display: inline-block;
+    /* width: 30%; */
+    font-size: 1.5rem;
+    padding: 1rem 2.0rem ;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    margin-right: -0.35em;
+}
+::placeholder{
+    position: absolute;
+    transform: translateX(-6rem) scale(0.5);
+
+}
+.input{
+    position: relative;
+}
+.input-label{
+    position: absolute;
+    left: 31%;
+    top: 70%;
+    opacity: 0;
+    font-size: 1.05rem;
+    transform: translate(-7rem,-2.0rem) scale(0.7);
+}
+.register:focus{
+    border: 1px solid #333;
+}
+.register:focus::placeholder{
+    transform: translate(-6rem,-64%) scale(0.5);
+}
+.input-label.has-input{ 
+    opacity: 1;
+}
+/* END :SMART INPUT FIELD UTILITY */
+/* ------------------------------------------------------------------------------------------------ */
+
+/* IMAGE AND ANIMATION AREA STYLES */
+
+.populart{
+    border-bottom: 8px solid #222222;  
+}
+.popular-common{
+    max-width: 80%;
+    margin: auto;
+    display: grid;
+    max-height: 80%;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 10%;
+    align-items: center;
+    justify-content: center;  
+}
+.text-area-top{
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+.popular-common h1{
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 1.1em;   
+}
+.popular-common p{
+    color: #fff;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+.tv-image{
+    position: relative;
+    width: 100%;
+}
+.tv-image img{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+.tv-gif{
+    position: absolute;
+    max-width: 71%;
+    bottom: 26%;
+    left: 14%;
+    max-height: 80%;
+}
+.tv-gif video{
+    max-width: 100%;
+    max-height: 100%;
+}
+.mobile-image{
+    position: relative;
+    max-width: 100%;
+    max-height: 80%;
+    transform: scale(0.8);
+}
+.mobile-image img{
+    height: 100%;
+    width: 100%;
+}
+.box-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 1.5em;
+    max-width: 20rem;
+    min-width: 15rem;
+    max-height: 5rem;
+    position: absolute;
+    border: 2px solid rgba(255,255,255,.25);
+    box-shadow: 0 0 2em 0 #000;
+    background: #000;
+    border-radius: 0.75em;
+    bottom: 10%;
+    left: 20%;
+}
+.box-image{
+    max-height: 80%;
+    max-width: 60%;
+    margin: 0.5em;
+}
+.box-image img{
+    height: 4em;
+    max-width: 100%;
+}
+.text{
+    display: grid;
+    align-items: center;
+}
+.default{
+    color: #fff;
+    font-size: 1em;
+    font-weight: 700;
+}
+.loading{
+    font-size: 0.9em;
+    color: #0071eb;
+    font-weight: 400;
+}
+.gif{
+    max-height: 80%;
+    max-width: 100%;
+}
+.gif img{
+    position: relative;
+    top: 1rem;
+    height: 3rem;
+    width: 3rem;
+}
+.tv-gif1{
+    position: absolute;
+    max-width: 60%;
+    bottom: 45%;
+    left: 20%;
+    max-height: 70%;
+}
+.tv-gif1 video{
+    max-width: 100%;
+    max-height: 100%;
+}
+/* STYLING FOR FAQ SECTIONS */
+/* ------------------------------------------------------------------------------------- */
+.faq-wrapper{
+    border-bottom: 8px solid #222222; 
+}
+.inner-wrapper{
+    max-width: 80%;
+    text-align: center;
+    margin: auto;
+}
+.inner-wrapper h1{
+    font-size: 2.3rem;
+    margin: 3rem;
+}
+.grid-wrapper{
+    text-align: start;
+    display: grid;
+    max-width: 60%;
+    grid-template-columns: 1fr;
+    grid-gap: 0.5rem;
+    margin: 2rem auto;
+}
+.line-grid{
+    background-color: #303030;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-auto-rows: minmax(1px ,auto);
+    cursor: pointer;
+}
+.question{
+    grid-row: 1;
+    grid-column: 1/6;
+    padding: .8em 2.2em .8em 1.2em;
+    color: #fff;
+    margin-bottom: 1px;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+.cross{
+    grid-row: 1;
+    grid-column: 7;
+    color: #fff;
+    font-weight: 100;
+    padding: .8em 1em .8em 0em;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.cross i{
+    transform: rotateZ(45deg);
+    transition: 0.2s linear;
+}
+.tempo i{
+    transform: none;
+    transition: 0.2s linear;
+}
+.answer{
+    grid-row: 3/6;
+    grid-column: 2/6;
+    color: #fff;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    display: none;
+}
+.answer.show{
+    display: block;
+}
+.line{
+    background-color: #000;
+    grid-column: 1/8;
+    grid-row: 2;
+}
+.contact-footer{
+    margin-top: 3.5rem;
+    margin-bottom: 1rem;
+}
+.inner-wrapper div p{
+    color: #fff;
+    margin-bottom: 3rem;
+}
+/* STYLING FOR FAQ SECTIONS ENDS */
+/* ------------------------------------------------------------------------------------- */
+
+/* STYLING FOR FOOTER SECTION */
+/* ------------------------------------------------------------------------------------- */
+
+.footer-wrapper{
+    border-bottom: 8px solid #222222; 
+}
+.inner-footer-wrapper{
+    max-width: 80%;
+    text-align: left;
+    margin: auto;
+}
+.call{
+    margin: 3rem;
+    color: #757575;
+    font-size: 1rem;
+}
+.call a{
+    color: #757575;
+    font-size: 1em;
+}
+.footer-grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: minmax(1px,auto);
+    grid-gap: 1rem;
+    margin: 3rem;
+}
+.footer-grid li a{
+    color: #757575;
+    font-size: 0.7rem;
+}
+p.country{
+    color: #757575;
+    margin-bottom: 3rem;
+    font-size: 0.8rem;
+}
+
+/* MEDIA QUERIES FOR IPAD PRO */
+/* ---------------------------------------------------------------------------------- */
+@media screen and (max-width:1032px)
+{
+    .box-wrapper{
+        left: 0;
+        bottom: -10%;
+    }
+    .mobile-image{
+        transform: none;
+    }
+    .mobile-image img{
+        transform: scale(1.2);
+    }
+    .box-image img{
+        height: 3.5em;
+        max-width: 100%;
+    }
+    .grid-wrapper{
+        max-width: 80%;
+    }
+    
+}
+/* MEDIA QUERIES FOR IPAD */
+/* ---------------------------------------------------------------------------------- */
+@media screen and (max-width:768px){
+    .showcase-content h1{
+        font-size: 2rem;
+    }
+    .btn-xl{
+        font-size: 0.8rem;
+    }
+    .grid-wrapper{
+        max-width: 100%;
+    }
+    .register{
+        font-size: 0.8rem;
+    }
+    ::placeholder{
+        transform: none;
+    }
+    .footer-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+/* MEDIA QUERIES FOR MOBILE DEVICES */
+/* ---------------------------------------------------------------------------------- */
+@media screen and (max-width:550px){
+    .showcase-top img{
+        top: 0;
+        left: 0;
+        transform: translate(-20%,-30%) scale(0.5);
+    }
+    .showcase-top a{
+        top: 10%;
+        right: 0;
+        transform: translateY(-2%) scale(0.7);
+    }
+    .showcase-content h1{
+        font-size: 1.2rem;
+        margin: 0 0 1rem;
+    }
+    .showcase {
+        height: 95vh;
+    }
+    .showcase-content p{
+        font-size: 1rem;
+    }
+    .popular-common{
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+    }
+    .tv-image{
+        bottom: 2rem;
+    }
+    .mobile-image{
+        top: 1rem;
+    }
+    .popular-common h1{
+        font-size: 1.5rem;
+    }
+    .popular-common p{
+        font-size: 1rem;
+    }
+    .gif img{
+       width: 2rem;
+    }
+    .inner-wrapper h1{
+       font-size: 1.5rem;
+    }
+    .question{
+       font-size: 1rem;
+    }
+    .answer{
+       font-size: 0.9rem;
+    }
+    .input-label{
+       font-size: 0.8rem;
+       transform: translate(-4.4rem,-1.2rem) scale(0.7);
+    }
+    .register:focus::placeholder{
+       transform: translate(-3rem,-70%) scale(0.7);
+    }
+   .footer-grid{
+       width: 100%;
+       grid-gap: 5px;
+       margin: 3rem auto;
+    }
+   .btn-xl, .register{
+       padding: 0.8rem 1.5rem ;
+       margin-bottom: 0.4rem;
+    }
+   .showcase-contact{
+       text-align: center;
+    }
+   .contact-footer{
+       text-align: center;
+    }
+}
